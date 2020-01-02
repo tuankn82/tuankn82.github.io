@@ -20,6 +20,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->model('Slide_top_Model');
+		$dulieu['item'] = $this->Slide_top_Model->get();
+		//var_dump($dulieu);
+		$this->load->view('home', $dulieu);
 	}
+
+	
 }
