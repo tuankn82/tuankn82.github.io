@@ -22,8 +22,11 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('Slide_top_Model');
 		$dulieu['item'] = $this->Slide_top_Model->get();
+		$this->load->model('Bg01_Model');
+		$dl['item_bg'] = $this->Bg01_Model->get();
 		//var_dump($dulieu);
 		$this->load->view('home', $dulieu);
+		$this->load->view('home', $dl);
 	}
 
 	

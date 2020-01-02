@@ -187,21 +187,21 @@
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				<?php foreach ($item as $key => $value): ?>
-				<div class="item-slick1 item<?php echo $key;?>-slick1" style="background-image: url(<?php echo $value['pic']; ?>">
+				<?php foreach ($item as $k => $vl): ?>
+				<div class="item-slick1 item<?php echo $k;?>-slick1" style="background-image: url(<?php echo $vl['pic']; ?>">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							<?php echo $value['title']; ?>
+							<?php echo $vl['title']; ?>
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-							<?php echo $value['title_sc'] ?>
+							<?php echo $vl['title_sc'] ?>
 						</h2>
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								<?php echo $value['button_name']; ?>
+							<a href="<?php echo $vl['button_link'] ?>" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								<?php echo $vl['button_name']; ?>
 							</a>
 						</div>
 					</div>
@@ -249,8 +249,11 @@
 	</section>
 
 	<!-- Intro -->
+	<?php var_dump($item_bg); ?>
 	<section class="section-intro">
-		<div class="header-intro parallax100 t-center p-t-135 p-b-158" style="background-image: url(images/bg-intro-01.jpg);">
+		<?php foreach ($item_bg as $vl): ?>
+
+		<div class="header-intro parallax100 t-center p-t-135 p-b-158" style="background-image: url(<?php echo $vl['pic']; ?>">
 			<span class="tit2 p-l-15 p-r-15">
 				Discover
 			</span>
@@ -259,6 +262,8 @@
 				Pato Place
 			</h3>
 		</div>
+
+		<?php endforeach; ?>
 
 		<div class="content-intro bg-white p-t-77 p-b-133">
 			<div class="container">
@@ -443,7 +448,7 @@
 	<section class="section-event">
 		<div class="wrap-slick2">
 			<div class="slick2">
-				<div class="item-slick2 item1-slick2" style="background-image: url(images/bg-event-01.jpg);">
+				<div class="item-slick2 item1-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-01.jpg);">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
 							<!-- - -->
@@ -530,7 +535,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick2 item2-slick2" style="background-image: url(images/bg-event-02.jpg);">
+				<div class="item-slick2 item2-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-02.jpg);">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
 							<!-- - -->
@@ -617,7 +622,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick2 item3-slick2" style="background-image: url(images/bg-event-04.jpg);">
+				<div class="item-slick2 item3-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-03.jpg);">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
 							<!-- - -->
@@ -948,7 +953,7 @@
 
 
 	<!-- Video -->
-	<section class="section-video parallax100" style="background-image: url(images/bg-cover-video-02.jpg);">
+	<section class="section-video parallax100" style="background-image: url(<?php echo base_url(); ?>/images/bg-cover-video-02.jpg);">
 		<div class="content-video t-center p-t-225 p-b-250">
 			<span class="tit2 p-l-15 p-r-15">
 				Discover
