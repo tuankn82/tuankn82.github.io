@@ -183,7 +183,7 @@
 
 	<!-- Slide1 -->
 
-	<!-- <?php var_dump($item); ?> -->
+	
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
@@ -249,20 +249,19 @@
 	</section>
 
 	<!-- Intro -->
-	<?php var_dump($item_bg); ?>
+	<?php //var_dump($item_bg); ?>
 	<section class="section-intro">
+	
 		<?php foreach ($item_bg as $vl): ?>
-
-		<div class="header-intro parallax100 t-center p-t-135 p-b-158" style="background-image: url(<?php echo $vl['pic']; ?>">
+		<div class="header-intro parallax100 t-center p-t-135 p-b-158" style="background-image: url(<?php echo $vl['pic']; ?>)">
 			<span class="tit2 p-l-15 p-r-15">
-				Discover
+				<?php echo $vl['title_mn']; ?>
 			</span>
 
 			<h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-				Pato Place
+				<?php echo $vl['title']; ?>
 			</h3>
 		</div>
-
 		<?php endforeach; ?>
 
 		<div class="content-intro bg-white p-t-77 p-b-133">
@@ -448,24 +447,26 @@
 	<section class="section-event">
 		<div class="wrap-slick2">
 			<div class="slick2">
-				<div class="item-slick2 item1-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-01.jpg);">
+
+				<?php foreach ($it_bg as $k => $vl):?>
+				<div class="item-slick2 item<?php echo $k;?>-slick2" style="background-image: url(<?php echo $vl['bg_event']; ?>);">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
 							<!-- - -->
 							<div class="title-event t-center m-b-52">
 								<span class="tit2 p-l-15 p-r-15">
-									Upcomming
+									<?php echo $vl['title']; ?>
 								</span>
 
 								<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-									Events
+									<?php echo $vl['title_mn']; ?>
 								</h3>
 							</div>
 
 							<!-- Block2 -->
 							<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
 								<!-- Pic block2 -->
-								<a href="#" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(images/event-02.jpg);">
+								<a href="#" class="wrap-pic-blo2 bg<?php echo $k;?>-blo2" style="background-image: url(<?php echo $vl['pic_sl_mn'] ?>);">
 									<div class="time-event size10 txt6 effect1">
 										<span class="txt-effect1 flex-c-m t-center">
 											08:00 PM Tuesday - 21 November 2018
@@ -476,11 +477,11 @@
 								<!-- Text block2 -->
 								<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
 									<h4 class="tit7 t-center m-b-10">
-										Wines during specific nights
+										<?php echo $vl['title_sl_mn']; ?>
 									</h4>
 
 									<p class="t-center">
-										Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
+										<?php echo $vl['content_sl_mn']; ?>
 									</p>
 
 									<div class="flex-sa-m flex-w w-full m-t-40">
@@ -526,7 +527,7 @@
 									</div>
 
 									<a href="#" class="txt4 m-t-40">
-										View Details
+										<?php echo $vl['button_name']; ?>
 										<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
 									</a>
 								</div>
@@ -535,180 +536,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick2 item2-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-02.jpg);">
-					<div class="wrap-content-slide2 p-t-115 p-b-208">
-						<div class="container">
-							<!-- - -->
-							<div class="title-event t-center m-b-52">
-								<span class="tit2 p-l-15 p-r-15">
-									Upcomming
-								</span>
-
-								<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-									Events
-								</h3>
-							</div>
-
-							<!-- Block2 -->
-							<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="fadeInDown">
-								<!-- Pic block2 -->
-								<a href="#" class="wrap-pic-blo2 bg2-blo2" style="background-image: url(images/event-06.jpg);">
-									<div class="time-event size10 txt6 effect1">
-										<span class="txt-effect1 flex-c-m">
-											08:00 PM Tuesday - 21 November 2018
-										</span>
-									</div>
-								</a>
-
-								<!-- Text block2 -->
-								<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-									<h4 class="tit7 t-center m-b-10">
-										Wines during specific nights
-									</h4>
-
-									<p class="t-center">
-										Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
-									</p>
-
-									<div class="flex-sa-m flex-w w-full m-t-40">
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 days">
-												25
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Days
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 hours">
-												12
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Hours
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 minutes">
-												59
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Minutes
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 seconds">
-												56
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Seconds
-											</span>
-										</div>
-									</div>
-
-									<a href="#" class="txt4 m-t-40">
-										View Details
-										<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick2 item3-slick2" style="background-image: url(<?php echo base_url(); ?>/images/bg-event-03.jpg);">
-					<div class="wrap-content-slide2 p-t-115 p-b-208">
-						<div class="container">
-							<!-- - -->
-							<div class="title-event t-center m-b-52">
-								<span class="tit2 p-l-15 p-r-15">
-									Upcomming
-								</span>
-
-								<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-									Events
-								</h3>
-							</div>
-
-							<!-- Block2 -->
-							<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="rotateInUpLeft">
-								<!-- Pic block2 -->
-								<a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url(images/event-01.jpg);">
-									<div class="time-event size10 txt6 effect1">
-										<span class="txt-effect1 flex-c-m">
-											08:00 PM Tuesday - 21 November 2018
-										</span>
-									</div>
-								</a>
-
-								<!-- Text block2 -->
-								<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-									<h4 class="tit7 t-center m-b-10">
-										Wines during specific nights
-									</h4>
-
-									<p class="t-center">
-										Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
-									</p>
-
-									<div class="flex-sa-m flex-w w-full m-t-40">
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 days">
-												25
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Days
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 hours">
-												12
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Hours
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 minutes">
-												59
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Minutes
-											</span>
-										</div>
-
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2 seconds">
-												56
-											</span>
-
-											<span class="dis-block t-center txt8">
-												Seconds
-											</span>
-										</div>
-									</div>
-
-									<a href="#" class="txt4 m-t-40">
-										View Details
-										<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
+			<?php endforeach; ?>
 			</div>
 
 			<div class="wrap-slick2-dots"></div>

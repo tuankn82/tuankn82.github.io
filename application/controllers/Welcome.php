@@ -21,12 +21,16 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Slide_top_Model');
-		$dulieu['item'] = $this->Slide_top_Model->get();
 		$this->load->model('Bg01_Model');
-		$dl['item_bg'] = $this->Bg01_Model->get();
+		$this->load->model('Bg02_Model');
+		$dulieu['item'] = $this->Slide_top_Model->get();
+		$dulieu['item_bg'] = $this->Bg01_Model->get();
+		$dulieu['it_bg'] = $this->Bg02_Model->get();
+		// $this->load->model('Bg01_Model');
+		// $dl['item_bg'] = $this->Bg01_Model->get();
 		//var_dump($dulieu);
 		$this->load->view('home', $dulieu);
-		$this->load->view('home', $dl);
+		//$this->load->view('home', $dl);
 	}
 
 	
