@@ -215,25 +215,26 @@
 	</section>
 
 	<!-- Welcome -->
+	<?php foreach ($it_about as $k => $vl): ?>
 	<section class="section-welcome bg1-pattern p-t-120 p-b-105">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 p-t-45 p-b-30">
 					<div class="wrap-text-welcome t-center">
 						<span class="tit2 t-center">
-							Italian Restaurant
+							<?php echo $vl['title_mn']; ?>
 						</span>
 
 						<h3 class="tit3 t-center m-b-35 m-t-5">
-							Welcome
+							<?php echo $vl['title_big']; ?>
 						</h3>
 
 						<p class="t-center m-b-22 size3 m-l-r-auto">
-							Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque.
+							<?php echo $vl['content_mn']; ?>
 						</p>
 
 						<a href="about.html" class="txt4">
-							Our Story
+							<?php echo $vl['button_name']; ?>
 							<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -241,12 +242,13 @@
 
 				<div class="col-md-6 p-b-30">
 					<div class="wrap-pic-welcome size2 bo-rad-10 hov-img-zoom m-l-r-auto">
-						<img src="images/our-story-01.jpg" alt="IMG-OUR">
+						<img src="<?php echo $vl['pic']; ?>" alt="IMG-OUR">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+<?php endforeach; ?>
 
 	<!-- Intro -->
 	<?php //var_dump($item_bg); ?>
@@ -267,20 +269,21 @@
 		<div class="content-intro bg-white p-t-77 p-b-133">
 			<div class="container">
 				<div class="row">
+
+				<?php foreach ($it_prd as $vl): ?>
 					<div class="col-md-4 p-t-30">
-						<!-- Block1 -->
 						<div class="blo1">
 							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-								<a href="#"><img src="images/intro-01.jpg" alt="IMG-INTRO"></a>
+								<a href="#"><img src="<?php echo$vl['pic_mn']; ?>" alt="IMG-INTRO"></a>
 							</div>
 
 							<div class="wrap-text-blo1 p-t-35">
 								<a href="#"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-									Romantic Restaurant
+									<?php echo $vl['title']; ?>
 								</h4></a>
 
 								<p class="m-b-20">
-									Phasellus lorem enim, luctus ut velit eget, con-vallis egestas eros.
+									<?php echo $vl['content_mn']; ?>
 								</p>
 
 								<a href="#" class="txt4">
@@ -290,54 +293,7 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-4 p-t-30">
-						<!-- Block1 -->
-						<div class="blo1">
-							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-								<a href="#"><img src="images/intro-02.jpg" alt="IMG-INTRO"></a>
-							</div>
-
-							<div class="wrap-text-blo1 p-t-35">
-								<a href="#"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-									Delicious Food
-								</h4></a>
-
-								<p class="m-b-20">
-									Aliquam eget aliquam magna, quis posuere risus ac justo ipsum nibh urna
-								</p>
-
-								<a href="#" class="txt4">
-									Learn More
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 p-t-30">
-						<!-- Block1 -->
-						<div class="blo1">
-							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-								<a href="#"><img src="images/intro-04.jpg" alt="IMG-INTRO"></a>
-							</div>
-
-							<div class="wrap-text-blo1 p-t-35">
-								<a href="#"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-									Red Wines You Love
-								</h4></a>
-
-								<p class="m-b-20">
-									Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
-								</p>
-
-								<a href="#" class="txt4">
-									Learn More
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+				<?php endforeach; ?>
 
 				</div>
 			</div>
@@ -781,14 +737,15 @@
 
 
 	<!-- Video -->
-	<section class="section-video parallax100" style="background-image: url(<?php echo base_url(); ?>/images/bg-cover-video-02.jpg);">
+	<?php foreach ($it_bg_vd as $vl): ?>  
+	<section class="section-video parallax100" style="background-image: url(<?php echo $vl['bg_vd'];?>);">
 		<div class="content-video t-center p-t-225 p-b-250">
 			<span class="tit2 p-l-15 p-r-15">
-				Discover
+				 <?php echo $vl['title_vd']; ?>
 			</span>
 
 			<h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-				Our Video
+				<?php echo $vl['title_mn_vd']; ?>
 			</h3>
 
 			<div class="btn-play ab-center size16 hov-pointer m-l-r-auto m-t-43 m-b-33" data-toggle="modal" data-target="#modal-video-01">
@@ -799,6 +756,22 @@
 		</div>
 	</section>
 
+	<!-- Modal Video 01-->
+	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<div class="modal-dialog" role="document" data-dismiss="modal">
+			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+			<div class="wrap-video-mo-01">
+				<div class="w-full wrap-pic-w op-0-0"><img src="images/icons/video-16-9.jpg" alt="IMG"></div>
+				<div class="video-mo-01">
+					<?php echo $vl['link_vd']; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php endforeach; ?>
 
 	<!-- Blog -->
 	<section class="section-blog bg-white p-t-115 p-b-123">
@@ -1102,20 +1075,7 @@
 	<!-- Container Selection1 -->
 	<div id="dropDownSelect1"></div>
 
-	<!-- Modal Video 01-->
-	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
-
-		<div class="modal-dialog" role="document" data-dismiss="modal">
-			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
-
-			<div class="wrap-video-mo-01">
-				<div class="w-full wrap-pic-w op-0-0"><img src="images/icons/video-16-9.jpg" alt="IMG"></div>
-				<div class="video-mo-01">
-					<iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 
 

@@ -1,12 +1,12 @@
 <?php 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Bg02_Model extends CI_Model {
+class Bg03_Model extends CI_Model {
 
     /**
      * @name string TABLE_NAME Holds the name of the table in use by this model
      */
-    const TABLE_NAME = 'bgr02';
+    const TABLE_NAME = 'bgr03';
 
     /**
      * @name string PRI_INDEX Holds the name of the tables' primary index used in this model
