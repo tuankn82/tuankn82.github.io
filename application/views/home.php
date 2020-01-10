@@ -29,10 +29,10 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/css/util.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/css/main.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/pace/themes/blue/pace-theme-minimal.css"/>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/animate.css/animate.css"/>
+	
+   
+   
+    
     <link rel="stylesheet" href="<?php echo base_url(); ?>/styles/app.css" id="load_styles_before"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>/styles/app.skins.css"/>
     <!-- link angular -->
@@ -41,7 +41,7 @@
 		
 <!--===============================================================================================-->
 </head>
-<body class="animsition">
+<body class="animsition" ng-app="myApp" ng-controller="MyController">
 
 	<!-- Header -->
 	<header>
@@ -685,26 +685,65 @@
 		<div class="txt5 m-10 text-center">
 				Đăng ký để xem giá phân phối
 		</div>
-		<form class="flex-c-m flex-w flex-col-c-m-lg p-l-5 p-r-5">
+		<form class="flex-c-m flex-w flex-col-c-m-lg p-l-5 p-r-5" name="register" novalidate>
 
-				<div class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
-					<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email-address" placeholder="Họ Tên">
+				<fieldset class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
+					<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" ng-model="nan" name="nan" placeholder="Họ Tên" required maxlength="15" minlength="2">
 					<i class="fa fa-user ab-r-m m-r-18" aria-hidden="true"></i>
-				</div>
-				<div class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
-					<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email-address" placeholder="Điện thoại">
+				</fieldset>				
+				<fieldset  class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
+					<input class="bo-rad-10 sizefull txt10 p-l-20" type="number" ng-model="num" name="num" placeholder="Điện thoại" required maxlength="15" minlength="10">
 					<i class="fa fa-phone ab-r-m m-r-18" aria-hidden="true"></i>
-				</div>
-				<div class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
-					<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email-address" placeholder="Email Adrress">
+				</fieldset>
+				<fieldset  class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
+					<input class="bo-rad-10 sizefull txt10 p-l-20" type="email" ng-model="em" name="em" placeholder="Email Adrress" required required maxlength="30" minlength="11">
 					<i class="fa fa-envelope ab-r-m m-r-18" aria-hidden="true"></i>
-				</div>
-			
+				</fieldset>
+				<fieldset  class="text-center">
+					<button type="submit" class="btn3 size18 txt11 trans-0-4 m-10">Đăng ký</button>
+					<button ng-click="rs(register)" type="reset" class="btn3 size18 txt11 trans-0-4 m-10">Xóa</button>
+				</fieldset>
 			<!-- Button3 -->
+			<div class="container" ng-show="register.$submitted">
+				<!-- alert name -->
+				<div class="alert alert-primary" role="alert" ng-show="register.nan.$error.required">
+					  Phải nhập họ tên
+				</div>
+				<div class="alert alert-danger" role="alert" ng-show="register.nan.$error.minlength">
+					  Tối thiểu 2 ký tự !
+				</div>
+				<div class="alert alert-secondary" role="alert" ng-show="register.nan.$error.maxlength">
+					  Tối đa 15 ký tự !
+				</div>	
+
+				<!-- alert telephone -->
+				<div class="alert alert-danger" role="alert" ng-show="register.num.$error.required">
+					  Phải nhập số điện thoại
+				</div>
+				<div class="alert alert-success" role="alert" ng-show="register.num.$error.minlength">
+					  Tối thiểu 10 số !
+				</div>
+				<div class="alert alert-secondary" role="alert" ng-show="register.num.$error.maxlength">
+					  Tối đa 15 số !
+				</div>	
+
+				<!-- alert email -->	
+				<div class="alert alert-danger" role="alert" ng-show="register.em.$error.required">
+					  Phải nhập Email
+				</div>
+				<div class="alert alert-danger" role="alert" ng-show="register.em.$error.email">
+					  Phải nhập đúng Email
+				</div>
+				<div class="alert alert-danger" role="alert" ng-show="register.em.$error.minlength">
+					  Tối thiểu 11 ký tự !
+				</div>
+				<div class="alert alert-danger" role="alert" ng-show="register.em.$error.maxlength">
+					  Tối đa 30 ký tự !
+				</div>	
+			</div>
+			
 		</form>
-		<div class="text-center">
-			<button type="submit" class="btn3 size18 txt11 trans-0-4 m-10">Đăng ký</button>
-		</div>
+		
 	</div>
 
 	<!-- Footer -->
@@ -888,7 +927,13 @@
 
 	
 
-
+ <!-- link angular   -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-1.5.min.js"></script>  
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-route.min.js"></script> 
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-animate.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-aria.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-messages.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/1.js"></script>
 
 <!--===============================================================================================-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -917,15 +962,9 @@
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>js/main.js"></script>
 
-	 <!-- link angular   -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-1.5.min.js"></script>  
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-route.min.js"></script> 
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-animate.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-aria.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-messages.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/1.js"></script>
+	
     <!-- initialize page scripts -->
-    <script src="scripts/ui/alert.js"></script>
+    <!-- <script src="scripts/ui/alert.js"></script> -->
     <!-- end initialize page scripts -->
 
 </body>
