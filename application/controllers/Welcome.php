@@ -28,6 +28,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('Product_Model');
 		$this->load->model('Category_Model');
 		$this->load->model('News_Model');
+		$this->load->model('Footer_Model');
 
 		
 		$dulieu['item'] = $this->Slide_top_Model->get();
@@ -41,6 +42,7 @@ class Welcome extends CI_Controller {
 		$dulieu['it_ctgr_p12c'] = $this->Category_Model->get_cate_c12();
 		$dulieu['it_ctgr_tt'] = $this->Category_Model->get_cate_title();
 		$dulieu['it_news'] = $this->News_Model->get();
+		$dulieu['it_footer'] = $this->Footer_Model->get();
 
 		$this->load->view('home', $dulieu);
 	}

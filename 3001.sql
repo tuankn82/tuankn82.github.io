@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2020 at 04:41 PM
+-- Generation Time: Jan 30, 2020 at 04:35 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.3.2
 
@@ -195,6 +195,31 @@ INSERT INTO `category_title` (`id`, `sologan`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `footer`
+--
+
+CREATE TABLE IF NOT EXISTS `footer` (
+  `tt_contact` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_adrr` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_tel` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_em` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tt_opening_t` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time_ope` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `day_ope` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tt_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Copyright` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `footer`
+--
+
+INSERT INTO `footer` (`tt_contact`, `contact_adrr`, `contact_tel`, `contact_em`, `tt_opening_t`, `time_ope`, `day_ope`, `tt_post`, `Copyright`) VALUES
+('Liên Hệ', 'Lĩnh Nam - Hoàng Mai - Hà Nội', '942979989', 'daitintdk@gmail.com', 'Giờ Mở Cửa', '8h30 - 19h00', 'Tất cả các ngày trong tuần', 'Bài viết mới nhất ', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `logo_top`
 --
 
@@ -211,11 +236,22 @@ CREATE TABLE IF NOT EXISTS `logo_top` (
 
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL,
-  `pic` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `pic_mn` varchar(255) NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pic_big` varchar(255) NOT NULL,
   `createdate` double NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `pic_mn`, `title`, `content`, `pic_big`, `createdate`) VALUES
+(1, 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-01.jpg', 'Công nghệ đền led mới nhất năm 2019', 'Cuộc tập kích tên lửa của Iran gây ấn tượng cho người dân trong nước về đòn đánh dữ dội, nhưng không gây leo thang căng thẳng với Mỹ.\r\n\r\n"Iraq hứng chịu đợt tập kích bằng 22 tên lửa vào khoảng thời gian từ 1h45 đến 2h45 sáng nay. 17 quả nhằm vào căn cứ không quân Ain al-Asad gần thủ đô Baghdad, trong đó hai quả đạn không phát nổ. 5 tên lửa khác rơi xuống sở chỉ huy liên quân tại thành phố Irbil", Bộ Quốc phòng Iraq hôm 8/1 ra thông cáo cho biết.\r\n\r\nCuộc tấn công rạng sáng 8/1 là động thái leo thang rất đáng kể với chính Iran. Nước này chưa bao giờ trực tiếp phóng tên lửa đạn đạo mang đầu đạn hàng trăm kg vào các vị trí của Mỹ tại Iraq, mà chỉ sử dụng các lực lượng ủy nhiệm sử dụng đạn cối, pháo phản lực (rocket) tập kích căn cứ, đại sứ quán Mỹ trong khu vực.', 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-01-big.jpg', 1578540342),
+(2, 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-04.jpg', 'Các kiểu trang trí đèn Led ngày tết', 'Tổng thống Mỹ Donald Trump hôm 8/1 đưa ra phát biểu đầu tiên tại Nhà Trắng sau vụ Iran tập kích tên lửa vào hai căn cứ có lính Mỹ đồn trú ở Iraq lúc rạng sáng. Mở đầu bài phát biểu, Trump tuyên bố chừng nào ông còn là Tổng thống Mỹ, Iran sẽ không bao giờ được phép sở hữu vũ khí hạt nhân.\r\n\r\nTrump xác nhận các binh sĩ Mỹ đều an toàn, hai căn cứ tại Iraq không chịu nhiều thiệt hại sau đòn tập kích của Iran. "Không có người Mỹ nào bị tổn hại trong cuộc tấn công đêm qua của Iran. Chúng ta không có thương vong. Tất cả binh sĩ đều an toàn và chỉ có thiệt hại tối thiểu tại các căn cứ quân sự", ông nói. "Các lực lượng Mỹ đã chuẩn bị cho mọi thứ, nhưng hiện tại Iran dường như đang xuống nước. Đây là điều tốt cho tất cả các bên liên quan và cho thế giới".', 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-04-big.jpg', 1578540801),
+(3, 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-02.jpg', 'Công nghệ Led biển quảng cáo', 'Bộ trưởng Quốc phòng Mỹ Esper tuyên bố Washington đã khôi phục mức răn đe với Tehran sau vụ không kích hạ sát tướng Iran Soleimani.\r\n\r\n"Tại thời điểm này, với các cuộc tấn công vào cuối tháng 12 chống lại Kataeb Hezbollah, nhóm vũ trang Iraq được Iran hậu thuẫn, sau đó là hành động của chúng tôi liên quan đến Soleimani, tôi nghĩ rằng chúng tôi đã khôi phục mức độ răn đe đối với Iran", Mark Esper nói với phóng viên hôm 8/1. "Nhưng chúng ta sẽ thấy, thời gian sẽ trả lời".\r\nBình luận trên được Esper đưa ra sau khi Iran rạng sáng qua tập kích tên lửa vào hai căn cứ có lính Mỹ đồn trú ở Iraq, hành động được cho là đáp trả việc quân đội Mỹ tiến hành cuộc không kích hạ sát thiếu tướng Qassem Soleimani, tư lệnh đặc nhiệm Quds của Vệ binh Cách mạng Hồi giáo Iran (IRGC) vào rạng sáng 3/1. \r\nLầu Năm Góc cho biết hệ thống cảnh báo sớm của họ đã phát hiện trước các tên lửa và tránh được thương vong cho quân nhân Mỹ.', 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-02-big.jpg', 1578541042),
+(4, 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-03.jpg', 'Những thiết kế đèn Led mới nhất', '\r\nLuật sư\r\nBất ngờ nồng độ cồn\r\nThứ năm, 9/1/2020, 06:47 (GMT+7)  128 Lưu\r\n\r\nNhiều người tỏ ra bất ngờ trước mức nồng độ cồn cho phép khi điều khiển phương tiện là 0 mg/lít khí thở. Nhưng họ sẽ còn bất ngờ lâu dài.\r\n\r\nNăm 2015, cộng đồng doanh nghiệp dậy sóng khi quy định hình sự hoá hành vi bán hàng online không giấy phép được Quốc hội thông qua trong Bộ luật Hình sự. Nhiều cá nhân chỉ trích điều khoản này "giết chết cả một ngành công nghiệp" và "vi phạm nghiêm trọng quyền tự do kinh doanh".\r\n\r\nMay mắn là sức ép của xã hội lúc đó đủ mạnh, cùng với những lỗi sai khác của bộ luật, Quốc hội đã đồng ý hoãn hiệu lực thi hành và chỉnh lý lại toàn bộ luật, trong đó loại bỏ quy định của Điều 292 đó. Điều không may là sự phiền phức đáng lẽ đã có thể tránh được nếu như quy định kể trên được đưa ra bàn thảo, chỉnh đốn từ giai đoạn soạn thảo.\r\n\r\nNói về chuyện xã hội bị "bất ngờ" vì luật thì không phải chỉ một lần. Quốc hội Việt Nam ban đầu đã không thể quyết định được phương án nồng độ cồn cho phép phù hợp trong Luật Phòng chống tác hại của rượu bia hồi tháng 6/2019. Các nghị sĩ đã có thời gian khó khăn khi bị xã hội công kích vì "không đứng về phe công chúng" trong việc nêu cao khẩu hiệu "uống rượu thì không lái xe". Một trong những lý do của lưỡng lự này, như chia sẻ của đại biểu Nguyễn Lân Hiếu, đó là bản thân nhiều đại biểu có vẻ còn băn khoăn với các hệ quả của việc đưa mức nồng độ cồn trong hơi thở cho phép khi điều khiển tất cả các phương tiện giao thông là 0 miligram trên mỗi lít khí thở.\r\n\r\nTôi và một số người khi đó đã viết bài trên trang cá nhân và báo chí nói về vấn đề này. Ngay trong cao điểm của cuộc "tổng chỉ trích" mà nhiều người nhắm tới các nghị sĩ, chúng tôi là tiếng nói hiếm hoi giải thích và thông cảm cho e ngại của các đại biểu, đề nghị nên có những tranh luận khoa học rõ hơn để giải toả được nghi ngại việc cảnh sát giao thông có thể phạt cả người uống nước trái cây lên men.\r\n\r\nTiếc rằng, những tiếng nói đó quá ít ỏi, thậm chí nhận lời chửi bới từ nhiều người. Họ cho rằng chúng tôi dửng dưng với các vụ tai nạn thương tâm, rồi cáo buộc chúng tôi "nghiện rượu", hoặc tệ hơn là "làm PR cho các hãng" rượu, bia. Thế nhưng, khi ấy tôi vẫn tin rằng tiếng nói của mình sẽ giúp các đại biểu có thêm thông tin khi đưa ra quyết sách trong bối cảnh bị áp lực từ dư luận, đồng thời giúp cho xã hội có thêm cái nhìn đa chiều về một thay đổi quan trọng. Tôi nghĩ vai trò của trí thức là lên tiếng vì điều đúng chứ không phải nói điều số đông muốn nghe.\r\n\r\nCuối cùng, vào ngày 24/6/2019, Luật Phòng chống tác hại của rượu, bia được thông qua với quy định cuối cùng là nồng độ cồn cho phép bằng 0. Và hôm nay, cả một làn sóng xã hội bất bình với quy định này, đòi hỏi phải có một sự rà soát lại toàn bộ đạo luật. Nếu những tiếng nói phản biện đã mạnh mẽ như vậy vào thời điểm tháng 6 năm 2019, có lẽ xã hội đã không bị "bất ngờ".', 'http://127.0.0.1:4001/Beluca1/Frontend/images/blog-01.jpg', 1578541350);
 
 --
 -- Triggers `news`
@@ -431,7 +467,7 @@ ALTER TABLE `logo_top`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `news_home`
 --
