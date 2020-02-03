@@ -7,36 +7,33 @@
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/fonts/themify/themify-icons.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/animate/animate.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/select2/select2.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/slick/slick.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/slick/slick.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/lightbox2/css/lightbox.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/vend/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/css/util.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/css/main.css">
-	
-   
-   
     
     <link rel="stylesheet" href="<?php echo base_url(); ?>/styles/app.css" id="load_styles_before"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>/styles/app.skins.css"/>
     <!-- link angular -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/vendor/angular-material.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/vend/angular-material.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/1.css">
 		
 <!--===============================================================================================-->
@@ -386,17 +383,17 @@
 	</section>
 
 
-	<!-- Event -->
-	<section class="section-event">
+	<!-- Evendt -->
+	<section class="section-evendt">
 		<div class="wrap-slick2">
 			<div class="slick2">
 
 				<?php foreach ($it_bg as $k => $vl):?>
-				<div class="item-slick2 item<?php echo $k;?>-slick2" style="background-image: url(<?php echo $vl['bg_event']; ?>);">
+				<div class="item-slick2 item<?php echo $k;?>-slick2" style="background-image: url(<?php echo $vl['bg_evendt']; ?>);">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
 							<!-- - -->
-							<div class="title-event t-center m-b-52">
+							<div class="title-evendt t-center m-b-52">
 								<span class="tit2 p-l-15 p-r-15">
 									<?php echo $vl['title']; ?>
 								</span>
@@ -410,7 +407,7 @@
 							<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
 								<!-- Pic block2 -->
 								<a href="#" class="wrap-pic-blo2 bg<?php echo $k;?>-blo2" style="background-image: url(<?php echo $vl['pic_sl_mn'] ?>);">
-									<div class="time-event size10 txt6 effect1">
+									<div class="time-evendt size10 txt6 effect1">
 										<span class="txt-effect1 flex-c-m t-center">
 											08:00 PM Tuesday - 21 November 2018
 										</span>
@@ -910,37 +907,37 @@
 	
 
  <!-- link angular   -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-1.5.min.js"></script>  
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-route.min.js"></script> 
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-animate.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-aria.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/vendor/angular-messages.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vend/angular-1.5.min.js"></script>  
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vend/angular-route.min.js"></script> 
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vend/angular-animate.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vend/angular-aria.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/vend/angular-messages.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>/1.js"></script>
 
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/animsition/js/animsition.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript"src="<?php echo base_url(); ?>vendor/select2/select2.min.js"></script>
+	<script type="text/javascript"src="<?php echo base_url(); ?>vend/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/daterangepicker/moment.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/daterangepicker/daterangepicker.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/slick-custom.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/parallax100/parallax100.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/parallax100/parallax100.js"></script>
 	<script type="text/javascript">
         $('.parallax100').parallax100();
 	</script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/countdowntime/countdowntime.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/lightbox2/js/lightbox.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>vend/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>js/main.js"></script>
 
